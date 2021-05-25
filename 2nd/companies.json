@@ -1,0 +1,30 @@
+[
+    {
+        "name": "zemen bank",
+        "sector": "finance",
+        "price": "200 ETB",
+        "exchangescore": "20%",
+        "altLogo": "ZmnLogo"
+    },
+    {
+        "name": "atk",
+        "sector": "other",
+        "price": "100 ETB",
+        "exchangescore": "50%",
+        "altLogo": "AtkLogo"
+    },
+    {
+        "name": "awash bank",
+        "sector": "finance",
+        "price": "250 ETB",
+        "exchangescore": "15%",
+        "altLogo": "AwshLogo"
+    },
+    {
+        "name": "coffee",
+        "sector": "resource",
+        "price": "300 ETB",
+        "exchangescore": "8%",
+        "altLogo": "CoffeeLogo"
+    }
+]
