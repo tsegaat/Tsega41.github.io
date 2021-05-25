@@ -753,6 +753,7 @@ footer{
 
     .mobile-gone{
         display: none;
+        font-size: 100px;
     }
 
     .head-title{
