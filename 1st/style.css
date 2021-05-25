@@ -167,6 +167,23 @@ nav ul li{
     line-height: 1;
 }
 
+.icon-title-container-index{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.index-icon-below-img{
+    height: 64px;
+    width: 64px;
+    margin-bottom: 40px;
+}
+
+.icon-title-container-index > span{
+    font-size: 24px;
+    font-weight: 600;
+}
+
 .contacts > a{
     color: rgb(27, 25, 25);
     text-decoration: none;
@@ -436,10 +453,6 @@ Create Account CSS
 .col-3 > span{
     text-align: center;
     font-size: 18px;
-}
-
-.col-3 img{
-    width: 100%;
 }
 
 .fa-stack{
