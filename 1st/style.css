@@ -641,6 +641,13 @@ footer{
         flex-basis: 100%;
     }
 
+    .index-icon-below-img{
+        height: 30px;
+        width: 30px;
+        margin-bottom: 40px;
+    }
+
+
     .featured-cat::after{
         display: none;
     }
