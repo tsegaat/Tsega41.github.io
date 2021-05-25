@@ -751,7 +751,7 @@ footer{
         flex-basis: 100%;
     }
 
-    .featured-cat::after{
+    .mobile-gone{
         display: none;
     }
 
