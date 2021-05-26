@@ -603,6 +603,11 @@ footer{
     display: none;
 }
 
+.exchange_ico{
+    display: none;
+}
+
+/* Mobile css */
 @media only screen and (max-device-width: 800px){
     nav ul{
         position: absolute;
@@ -657,6 +662,22 @@ footer{
         font-weight: 400;
         font-family: "Prata";
         text-align: center;
+    }
+
+    .exchange_ico{
+        transform: translateX(-10px); 
+        display: block;
+    }
+    .info-title{
+        font-size: 35px;
+    }
+
+    .mobile-gone{
+        display: none;
+    }
+
+    .table-trade-btn{
+        width: 15px;
     }
 
     .head-create-email{

@@ -46,8 +46,9 @@ const searchCompanies = async searchText => {
                     <span class="table-company-name">${firstCompany}</span>
                 </td>
                 <td>${companyPrice}</td>
-                <td>${companyExchangescore}</td>
-                <td><button class="table-trade-btn btn">Exchange</button></td>
+                <td class="mobile-gone">${companyExchangescore}</td>
+                <td><button class="table-trade-btn btn"><span class="mobile-gone">Exchange</span><img
+                src="1st/images/exchange_ico.png" class="exchange_ico"></button></td>
             </tr>
         `
 
@@ -64,8 +65,9 @@ const searchCompanies = async searchText => {
                             Bank</span>
                     </td>
                     <td>224.3 ETB</td>
-                    <td>80%</td>
-                    <td><button class="table-trade-btn btn">Exchange</button></td>
+                    <td class="mobile-gone">80%</td>
+                    <td><button class="table-trade-btn btn"><span class="mobile-gone">Exchange</span><img
+                    src="1st/images/exchange_ico.png" class="exchange_ico"></button></td>
                 </tr>
                 <tr>
                     <td>2</td>
@@ -76,8 +78,9 @@ const searchCompanies = async searchText => {
                             Cola</span>
                     </td>
                     <td>532.1 ETB</td>
-                    <td>50%</td>
-                    <td><button class="table-trade-btn btn">Exchange</button></td>
+                    <td class="mobile-gone">50%</td>
+                    <td><button class="table-trade-btn btn"><span class="mobile-gone">Exchange</span><img
+                    src="1st/images/exchange_ico.png" class="exchange_ico"></button></td>
                 </tr>
                 <tr>
                     <td>3</td>
@@ -88,8 +91,9 @@ const searchCompanies = async searchText => {
                             Cola</span>
                     </td>
                     <td>532.1 ETB</td>
-                    <td>30%</td>
-                    <td><button class="table-trade-btn btn">Exchange</button></td>
+                    <td class="mobile-gone">30%</td>
+                    <td><button class="table-trade-btn btn"><span class="mobile-gone">Exchange</span><img
+                    src="1st/images/exchange_ico.png" class="exchange_ico"></button></td>
                 </tr>
                 <tr>
                     <td>4</td>
@@ -100,8 +104,9 @@ const searchCompanies = async searchText => {
                             Cola</span>
                     </td>
                     <td>532.1 ETB</td>
-                    <td>10%</td>
-                    <td><button class="table-trade-btn btn">Exchange</button></td>
+                    <td class="mobile-gone">10%</td>
+                    <td><button class="table-trade-btn btn"><span class="mobile-gone">Exchange</span><img
+                    src="1st/images/exchange_ico.png" class="exchange_ico"></button></td>
                 </tr>
                 <tr>
                     <td>5</td>
@@ -112,8 +117,9 @@ const searchCompanies = async searchText => {
                             Cola</span>
                     </td>
                     <td>532.1 ETB</td>
-                    <td>90%</td>
-                    <td><button class="table-trade-btn btn">Exchange</button></td>
+                    <td class="mobile-gone">90%</td>
+                    <td><button class="table-trade-btn btn"><span class="mobile-gone">Exchange</span><img
+                    src="1st/images/exchange_ico.png" class="exchange_ico"></button></td>
                 </tr>
         `
 
