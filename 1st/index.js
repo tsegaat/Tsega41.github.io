@@ -42,8 +42,13 @@ const searchCompanies = async searchText => {
                 </td>
                 <td>${companyPrice}</td>
                 <td class="mobile-gone">${companyExchangescore}</td>
-                <td><button class="table-trade-btn btn"><span class="mobile-gone">Exchange</span><img
-                src="1st/images/exchange_ico.png" class="exchange_ico"></button></td>
+                <td><button class="table-trade-btn btn"><span class="mobile-gone"><a
+                                href="1st\create-acc-page.html">Exchange</a></span>
+                        <a href="1st\create-acc-page.html">
+                            <img src="1st/images/exchange_ico.png" class="exchange_ico">
+                        </a>
+                    </button>
+                </td>
             </tr>
         `
 
