@@ -187,7 +187,10 @@ profile_settings_li_normal.addEventListener("click", () => {
 
 // Making the search bar value the main thing in the page start
 
-const selectedCompanies = localStorage["company"].toLowerCase()
+var url_string = window.location.href
+var url = new URL(url_string);
+var c = url.searchParams.get("company");
+const selectedCompanies = c.toLowerCase()
 
 const searchCompanies = async searchText => {
     const res = await fetch("../2nd/companies.json")

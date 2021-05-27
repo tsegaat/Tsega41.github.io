@@ -81,8 +81,7 @@ searchBtn.addEventListener('click', () => {
             if (options[i].value.toLowerCase() == val.toLowerCase()) {
                 searchBtn.innerHTML = "Search"
                 searchBtn.style.backgroundColor = "#1652f0"
-                localStorage["company"] = val
-                window.location.href = "../3rth/buysell_page.html"
+                window.location.href = `../3rth/buysell_page.html?company=${val}`
                 return 0;
             }
         }
