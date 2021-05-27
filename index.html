@@ -118,8 +118,13 @@
                     </td>
                     <td>532.1 ETB</td>
                     <td class="mobile-gone">10%</td>
-                    <td><button class="table-trade-btn btn"><span class="mobile-gone">Exchange</span><img
-                                src="1st/images/exchange_ico.png" class="exchange_ico"></button></td>
+                    <td><button class="table-trade-btn btn"><span class="mobile-gone"><a
+                                    href="1st\create-acc-page.html">Exchange</a></span>
+                            <a href="1st\create-acc-page.html">
+                                <img src="1st/images/exchange_ico.png" class="exchange_ico">
+                            </a>
+                        </button>
+                    </td>
                 </tr>
                 <tr>
                     <td>5</td>
@@ -259,27 +264,6 @@
             MenuItems.style.maxHeight = "0px"
         }
     }
-
-
-    var exchangeBtn = document.getElementsByClassName("table-trade-btn")
-    var header = document.getElementById("header")
-
-    for (var i = 0; i < exchangeBtn.length; i++) {
-        exchangeBtn[i].addEventListener("click", function () {
-            window.location.href = "#header"
-        })
-    }
-
-    var head_create_btn = document.getElementsByClassName("head-create-btn")[0]
-    head_create_btn.addEventListener("click", function () {
-        window.location.href = "create-acc-page.html"
-    })
-    var head_submit_email = document.getElementsByClassName("head-submit-email")[0]
-
-
-    head_submit_email.addEventListener("click", function () {
-        window.location.href = "create-acc-page.html"
-    })
 
 </script>
 
