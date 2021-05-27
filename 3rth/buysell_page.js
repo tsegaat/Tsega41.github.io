@@ -180,7 +180,7 @@ profile_settings_manage.addEventListener("click", () => {
 var profile_settings_li_normal = document.getElementsByClassName("profile-settings-li-normal")[1]
 profile_settings_li_normal.addEventListener("click", () => {
     auth.signOut().then(() => {
-        window.location.href = "../1st/index.html";
+        window.location.href = "../../index.html";
     })
 })
 // End of signout option
