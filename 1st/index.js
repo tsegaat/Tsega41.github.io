@@ -61,8 +61,13 @@ const searchCompanies = async searchText => {
                     </td>
                     <td>224.3 ETB</td>
                     <td class="mobile-gone">80%</td>
-                    <td><button class="table-trade-btn btn"><span class="mobile-gone">Exchange</span><img
-                    src="1st/images/exchange_ico.png" class="exchange_ico"></button></td>
+                    <td><button class="table-trade-btn btn"><span class="mobile-gone"><a
+                                    href="1st\create-acc-page.html">Exchange</a></span>
+                            <a href="1st\create-acc-page.html">
+                                <img src="1st/images/exchange_ico.png" class="exchange_ico">
+                            </a>
+                        </button>
+                    </td>
                 </tr>
                 <tr>
                     <td>2</td>
@@ -74,8 +79,13 @@ const searchCompanies = async searchText => {
                     </td>
                     <td>532.1 ETB</td>
                     <td class="mobile-gone">50%</td>
-                    <td><button class="table-trade-btn btn"><span class="mobile-gone">Exchange</span><img
-                    src="1st/images/exchange_ico.png" class="exchange_ico"></button></td>
+                    <td><button class="table-trade-btn btn"><span class="mobile-gone"><a
+                                    href="1st\create-acc-page.html">Exchange</a></span>
+                            <a href="1st\create-acc-page.html">
+                                <img src="1st/images/exchange_ico.png" class="exchange_ico">
+                            </a>
+                        </button>
+                    </td>
                 </tr>
                 <tr>
                     <td>3</td>
@@ -87,8 +97,13 @@ const searchCompanies = async searchText => {
                     </td>
                     <td>532.1 ETB</td>
                     <td class="mobile-gone">30%</td>
-                    <td><button class="table-trade-btn btn"><span class="mobile-gone">Exchange</span><img
-                    src="1st/images/exchange_ico.png" class="exchange_ico"></button></td>
+                    <td><button class="table-trade-btn btn"><span class="mobile-gone"><a
+                                    href="1st\create-acc-page.html">Exchange</a></span>
+                            <a href="1st\create-acc-page.html">
+                                <img src="1st/images/exchange_ico.png" class="exchange_ico">
+                            </a>
+                        </button>
+                    </td>
                 </tr>
                 <tr>
                     <td>4</td>
@@ -100,8 +115,13 @@ const searchCompanies = async searchText => {
                     </td>
                     <td>532.1 ETB</td>
                     <td class="mobile-gone">10%</td>
-                    <td><button class="table-trade-btn btn"><span class="mobile-gone">Exchange</span><img
-                    src="1st/images/exchange_ico.png" class="exchange_ico"></button></td>
+                    <td><button class="table-trade-btn btn"><span class="mobile-gone"><a
+                                    href="1st\create-acc-page.html">Exchange</a></span>
+                            <a href="1st\create-acc-page.html">
+                                <img src="1st/images/exchange_ico.png" class="exchange_ico">
+                            </a>
+                        </button>
+                    </td>
                 </tr>
                 <tr>
                     <td>5</td>
@@ -113,8 +133,13 @@ const searchCompanies = async searchText => {
                     </td>
                     <td>532.1 ETB</td>
                     <td class="mobile-gone">90%</td>
-                    <td><button class="table-trade-btn btn"><span class="mobile-gone">Exchange</span><img
-                    src="1st/images/exchange_ico.png" class="exchange_ico"></button></td>
+                    <td><button class="table-trade-btn btn"><span class="mobile-gone"><a
+                                    href="1st\create-acc-page.html">Exchange</a></span>
+                            <a href="1st\create-acc-page.html">
+                                <img src="1st/images/exchange_ico.png" class="exchange_ico">
+                            </a>
+                        </button>
+                    </td>
                 </tr>
         `
 
