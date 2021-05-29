@@ -37,6 +37,8 @@ const username = userInfo[2]
 const email = userInfo[3]
 const pass = userInfo[4]
 
+localStorage.removeItem("userInfo")
+
 function submit() {
     create_acc_confirm_button.innerHTML = "Creating..."
     create_acc_confirm_button.style.backgroundColor = "rgb(55, 109, 247)"
