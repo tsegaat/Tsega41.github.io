@@ -307,16 +307,16 @@ submitOfferBtn.addEventListener("click", () => {
 
 // The submit button end
 
-window.onload = function () {
-    // this.contact_number.value = Math.random() * 100000 | 0;
-    // these IDs from the previous steps
-    emailjs.send("service_hmdp796", "contact_form", {
-        message: "tsega",
-        to_email: "gsssucks41@gmail.com",
-    })
-        .then(function () {
-            console.log('SUCCESS!');
-        }, function (error) {
-            console.log('FAILED...', error);
-        });
-}
+// window.onload = function () {
+//     // this.contact_number.value = Math.random() * 100000 | 0;
+//     // these IDs from the previous steps
+//     emailjs.send("service_hmdp796", "contact_form", {
+//         message: "tsega",
+//         to_email: "tsega@yahoo.com",
+//     })
+//         .then(function () {
+//             console.log('SUCCESS!');
+//         }, function (error) {
+//             console.log('FAILED...', error);
+//         });
+// }
