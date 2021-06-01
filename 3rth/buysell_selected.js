@@ -217,36 +217,24 @@ const premium_input = document.getElementById("premium-input")
 
 premium_input.addEventListener("input", () => {
     var premiumAmount = Number(premium_input.value)
+    var quantityAmount = Number(quantity.value)
     var compPrice = Number(companyTotalPrice)
     var premiumCompPrice = premiumAmount + compPrice
 
-    domCompTotal.innerHTML = premiumCompPrice
+    domCompTotal.innerHTML = premiumCompPrice * quantityAmount
+    var totVal = domCompTotal.innerHTML.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    domCompTotal.innerHTML = totVal
 })
 
 quantity.addEventListener("input", () => {
     var quantityAmount = Number(quantity.value)
     var premiumAmount = Number(premium_input.value)
     var compPrice = Number(companyTotalPrice)
-    if (quantity.value.length >= 4) {
-        function reverseString(str) {
-            // empty string
-            let newString = "";
-            for (let i = str.length - 1; i >= 0; i--) {
-                newString += str[i];
-            }
-            return newString;
-        }
-        var quantityVal = reverseString(quantity.value)
-        // console.log(quantityVal)
-        for (var i = 0; i < quantityVal.length; i + 3) {
-            // console.log(quantityVal[i])
-        }
-
-    }
-
     var premiumCompPrice = premiumAmount + compPrice
 
     domCompTotal.innerHTML = premiumCompPrice * quantityAmount
+    var totVal = domCompTotal.innerHTML.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    domCompTotal.innerHTML = totVal
 })
 
 // Making the shares interactive with the total price end
@@ -292,7 +280,7 @@ submitOfferBtn.addEventListener("click", () => {
                 dbf.collection("buyers_requests").doc().set(aboutRequestInfo).then(() => {
                     submitOfferBtn.innerHTML = "Submit Offer"
                     submitOfferBtn.style.backgroundColor = "#e7ebf5"
-                    swal("Your offer has been submitted", "Interested person will contact if your request is accepted", "success").then(() => {
+                    swal("Your offer has been submitted", "An email will be sent to you if your request in accepted", "success").then(() => {
                         window.location.href = "../2nd/main-page.html"
                     })
                 })
