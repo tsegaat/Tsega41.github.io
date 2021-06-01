@@ -280,7 +280,7 @@ submitOfferBtn.addEventListener("click", () => {
                 dbf.collection("buyers_requests").doc().set(aboutRequestInfo).then(() => {
                     submitOfferBtn.innerHTML = "Submit Offer"
                     submitOfferBtn.style.backgroundColor = "#e7ebf5"
-                    swal("Your offer has been submitted", "An email will be sent to you if your request in accepted", "success").then(() => {
+                    swal("Your offer has been submitted", "An email will be sent to you if your request is accepted", "success").then(() => {
                         window.location.href = "../2nd/main-page.html"
                     })
                 })

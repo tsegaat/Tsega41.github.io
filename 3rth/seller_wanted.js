@@ -186,8 +186,11 @@ profile_settings_li_normal.addEventListener("click", () => {
 // End of signout option
 
 // setting up the seller wanted page to be dynamic start
-const seller_selected_company = localStorage["sellerCompnay"].split(",")
-console.log(seller_selected_company)
+const c = localStorage["sellerCompany"]
+localStorage.removeItem("ui")
+var decrypted = CryptoJS.AES.decrypt(c, "The company called ethioshare is pretty good don't you think so").toString(CryptoJS.enc.Utf8);
+const seller_selected_company = c.split(",")
+
 const compName = seller_selected_company[0]
 const compPrice = seller_selected_company[1].split(" ")[0]
 // const compPremium = seller_selected_company[2]

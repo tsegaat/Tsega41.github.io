@@ -261,8 +261,10 @@ async function getRequests() {
                     const compName = companyName.innerHTML
                     const compPrice = companyPrice.innerHTML
                     const compQuantity = companyQuantity.innerHTML
+                    const userInfoString = compName + "," + compPrice + "," + compQuantity
+                    const encrypted = CryptoJS.AES.encrypt(userInfoString, "The company called ethioshare is pretty good don't you think so");
 
-                    localStorage["sellerCompnay"] = [compName, compPrice, compQuantity]
+                    localStorage["sellerCompany"] = encrypted
                     window.location.href = "seller_wanted.html"
                 })
 
@@ -271,7 +273,6 @@ async function getRequests() {
                     const compPrice = companyPrice.innerHTML
                     const compQuantity = companyQuantity.innerHTML
 
-                    localStorage["sellerCompnay"] = [compName, compPrice, compQuantity]
                     window.location.href = "seller_request.html"
                 })
             }

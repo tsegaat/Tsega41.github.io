@@ -170,7 +170,6 @@ function submit() {
                     create_acc_confirm_button.innerHTML = "Creating Account ..."
                     create_acc_confirm_button.style.backgroundColor = "rgb(55, 109, 247)"
 
-                    //TODO: Don't transfer sensitive information like this
                     const userInfoString = fixed_firstName + "," + fixed_lastName + "," + username_.value.toLowerCase() + "," + fixed_email + "," + password.value
                     const encrypted = CryptoJS.AES.encrypt(userInfoString, "potatoes are chips and tomato is salsa everything is coming into place");
                     // console.log(encrypted)
