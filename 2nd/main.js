@@ -296,7 +296,7 @@ profile_settings_manage.addEventListener("click", () => {
 var profile_settings_li_normal_signout = document.getElementsByClassName("profile-settings-li-normal")[1]
 profile_settings_li_normal_signout.addEventListener("click", () => {
     auth.signOut().then(() => {
-        window.location.href = "/../index.html";
+        window.location.href = "../index.html";
     })
 })
 // End of signout option
@@ -307,3 +307,5 @@ profile_settings_li_normal_verify.addEventListener("click", () => {
     window.location.href = "verify_me.html"
 })
 // Verify me end
+
+// The searchbar update the json file start

@@ -227,6 +227,22 @@ quantity.addEventListener("input", () => {
     var quantityAmount = Number(quantity.value)
     var premiumAmount = Number(premium_input.value)
     var compPrice = Number(companyTotalPrice)
+    if (quantity.value.length >= 4) {
+        function reverseString(str) {
+            // empty string
+            let newString = "";
+            for (let i = str.length - 1; i >= 0; i--) {
+                newString += str[i];
+            }
+            return newString;
+        }
+        var quantityVal = reverseString(quantity.value)
+        // console.log(quantityVal)
+        for (var i = 0; i < quantityVal.length; i + 3) {
+            // console.log(quantityVal[i])
+        }
+
+    }
 
     var premiumCompPrice = premiumAmount + compPrice
 
@@ -241,7 +257,7 @@ quantity.addEventListener("input", () => {
 const submitOfferBtn = document.getElementById("submitBtn")
 // TODO: Make the quantity input bar not accept negative or 0
 submitOfferBtn.addEventListener("click", () => {
-    submitOfferBtn.innerHTML = "Submiting..."
+    submitOfferBtn.innerHTML = "Submitting..."
     submitOfferBtn.style.backgroundColor = "#dbdbdb"
     if (quantity.value < "1") {
         swal("Invalid Shares", "Shares can't be negative or 0", "error")
@@ -291,3 +307,16 @@ submitOfferBtn.addEventListener("click", () => {
 
 // The submit button end
 
+window.onload = function () {
+    // this.contact_number.value = Math.random() * 100000 | 0;
+    // these IDs from the previous steps
+    emailjs.send("service_hmdp796", "contact_form", {
+        message: "tsega",
+        to_email: "gsssucks41@gmail.com",
+    })
+        .then(function () {
+            console.log('SUCCESS!');
+        }, function (error) {
+            console.log('FAILED...', error);
+        });
+}

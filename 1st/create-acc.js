@@ -76,14 +76,14 @@ function submit() {
         return 1
     }
 
-    if (!(/^[a-zA-Z]+$/.test(firstName.value))) {
+    if (!(/^[a-zA-Z]+$/.test(firstName.value.trim()))) {
         create_acc_confirm_button.innerHTML = "Create Account"
         create_acc_confirm_button.style.backgroundColor = "rgb(22, 82, 240)"
         create_acc_empty_field.innerHTML = "Name can only contain letters"
         return 1
     }
 
-    if (!(/^[a-zA-Z]+$/.test(lastName.value))) {
+    if (!(/^[a-zA-Z]+$/.test(lastName.value.trim()))) {
         create_acc_confirm_button.innerHTML = "Create Account"
         create_acc_confirm_button.style.backgroundColor = "rgb(22, 82, 240)"
         create_acc_empty_field.innerHTML = "Name can only contain letters"
@@ -142,6 +142,7 @@ function submit() {
 
     const fixed_username = username_.value.toLowerCase()
     var usernameExistCheck = false
+    var emailExistCheck = false
     firebase.firestore().collection("users").where("username", "==", fixed_username).get().then((q) => {
         q.forEach(() => {
             create_acc_empty_field.innerHTML = "Username already exits"
@@ -156,11 +157,27 @@ function submit() {
             fixed_firstName = fixed_firstName.charAt(0).toUpperCase() + fixed_firstName.slice(1);
             fixed_lastName = fixed_lastName.charAt(0).toUpperCase() + fixed_lastName.slice(1);
             fixed_email = email.value.trim().toLowerCase();
-            create_acc_confirm_button.innerHTML = "Creating Account ..."
-            create_acc_confirm_button.style.backgroundColor = "rgb(55, 109, 247)"
 
-            localStorage["userInfo"] = [fixed_firstName, fixed_lastName, username_.value.toLowerCase(), fixed_email, password.value]
-            window.location.href = "create-more-acc.html"
+            firebase.firestore().collection("users").where("email", "==", fixed_email).get().then((q) => {
+                q.forEach(() => {
+                    create_acc_empty_field.innerHTML = "Email already exits"
+                    emailExistCheck = true
+                    create_acc_confirm_button.innerHTML = "Create Account"
+                    create_acc_confirm_button.style.backgroundColor = "rgb(22, 82, 240)"
+                })
+
+                if (!emailExistCheck) {
+                    create_acc_confirm_button.innerHTML = "Creating Account ..."
+                    create_acc_confirm_button.style.backgroundColor = "rgb(55, 109, 247)"
+
+                    //TODO: Don't transfer sensitive information like this
+                    const userInfoString = fixed_firstName + "," + fixed_lastName + "," + username_.value.toLowerCase() + "," + fixed_email + "," + password.value
+                    const encrypted = CryptoJS.AES.encrypt(userInfoString, "potatoes are chips and tomato is salsa everything is coming into place");
+                    // console.log(encrypted)
+                    localStorage["ui"] = encrypted
+                    window.location.href = `create-more-acc.html`
+                }
+            })
         }
     })
 

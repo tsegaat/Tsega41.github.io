@@ -22,6 +22,7 @@ const more_options_container = document.getElementsByClassName("more-options-con
 const more_options_btn = document.getElementsByClassName("more-options-btn")[0]
 const profile_settings_container = document.getElementsByClassName("profile-settings-container")[0]
 const profile_picture = document.getElementsByClassName("profile-picture")[0]
+const profile_picture_nav = document.getElementById("profile-picture-nav")
 
 profile_picture.addEventListener("click", () => {
     if (profile_settings_container.style.display == "none") {
@@ -38,6 +39,15 @@ profile_picture.addEventListener("click", () => {
         }
     })
 
+})
+
+profile_picture_nav.addEventListener("click", () => {
+    if (profile_settings_container.style.display == "none") {
+        profile_settings_container.style.display = "block"
+        more_options_container.style.display = "none"
+    } else if (profile_settings_container.style.display == "block") {
+        profile_settings_container.style.display = "none"
+    }
 })
 
 
@@ -82,7 +92,6 @@ const all_companies = more_options_container.children[0]
 all_companies.addEventListener("click", () => {
     window.location.href = "../3rth/all_companies.html"
 })
-
 // End of More Options
 
 // Start email
@@ -114,7 +123,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 const profile_settings_camera_icon = document.getElementsByClassName("profile-settings-camera-icon")[0]
 const proflie_settings_profilepicture = document.getElementsByClassName("proflie-settings-profilepicture")[0]
 const profile_settings_profilepicture_input = document.getElementById("profile-settings-profilepicture-input")
-const profile_picture_nav = document.getElementById("profile-picture-nav")
+// const profile_picture_nav = document.getElementById("profile-picture-nav")
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {

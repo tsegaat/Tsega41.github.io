@@ -29,16 +29,21 @@ const create_acc_empty_field = document.getElementById("create-acc-empty-field")
 const create_acc_content_form_input = document.getElementsByClassName("create-acc-content-form-input")[1]
 const create_acc_content_form_date = document.getElementsByClassName("create-acc-content-form-input")[0]
 
-const userInfo = localStorage.getItem("userInfo").split(",");
+
+// var url_string = window.location.href
+// var url = new URL(url_string);
+// var c = url.searchParams.get("ui");
+const c = localStorage["ui"]
+localStorage.removeItem("ui")
+var decrypted = CryptoJS.AES.decrypt(c, "potatoes are chips and tomato is salsa everything is coming into place").toString(CryptoJS.enc.Utf8);
+const userInfo = decrypted.split(",");
 
 const firstName = userInfo[0]
 const lastName = userInfo[1]
 const username = userInfo[2]
 const email = userInfo[3]
 const pass = userInfo[4]
-
-localStorage.removeItem("userInfo")
-
+// console.log(decrypted)
 function submit() {
     create_acc_confirm_button.innerHTML = "Creating..."
     create_acc_confirm_button.style.backgroundColor = "rgb(55, 109, 247)"
@@ -137,6 +142,7 @@ function submit() {
                     firebase.firestore().collection('users').doc(c.user.uid).set({
                         firstName: firstName,
                         lastName: lastName,
+                        email: email,
                         username: username,
                         phone: phone,
                         birthday: birthday,

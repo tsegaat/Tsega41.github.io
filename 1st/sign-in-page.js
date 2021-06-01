@@ -24,9 +24,6 @@ var password = create_acc_content_form_input[1]
 var show_password1 = show_icon[0]
 var hide_password1 = hide_icon[0]
 
-email.value = localStorage["create-acc-email"]
-localStorage["create-acc-email"] = ""
-
 show_password1.onclick = function () {
     password.setAttribute("type", "text")
 
