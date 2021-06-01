@@ -187,23 +187,24 @@ profile_settings_li_normal.addEventListener("click", () => {
 
 // setting up the seller wanted page to be dynamic start
 const c = localStorage["sellerCompany"]
-localStorage.removeItem("ui")
+localStorage.removeItem("sellerCompany")
 var decrypted = CryptoJS.AES.decrypt(c, "The company called ethioshare is pretty good don't you think so").toString(CryptoJS.enc.Utf8);
-const seller_selected_company = c.split(",")
+const seller_selected_company = decrypted.split(",")
 
 const compName = seller_selected_company[0]
 const compPrice = seller_selected_company[1].split(" ")[0]
-// const compPremium = seller_selected_company[2]
 const compQuantity = seller_selected_company[2]
+const compPremium = seller_selected_company[3].split(" ")[0]
+
 const seller_wanted_compnay_name = document.getElementsByClassName("seller_wanted_compnay_name")[0]
 const seller_wanted_compnay_price = document.getElementsByClassName("seller_wanted_compnay_price_actual")[0]
-// const seller_wanted_compnay_premium = document.getElementsByClassName("seller_wanted_compnay_price_premium")[0]
+const seller_wanted_compnay_premium = document.getElementsByClassName("seller_wanted_compnay_price_premium")[0]
 const seller_wanted_compnay_quantity = document.getElementsByClassName("seller_wanted_compnay_quantity_actual")[0]
 const total_price_text = document.getElementById("total-price-text")
 
 seller_wanted_compnay_name.innerHTML = compName
 seller_wanted_compnay_price.innerHTML = compPrice
-// seller_wanted_compnay_premium.innerHTML = compPremium
+seller_wanted_compnay_premium.innerHTML = compPremium
 seller_wanted_compnay_quantity.innerHTML = compQuantity
 
 total_price_text.innerHTML = Number(compPrice) * Number(compQuantity)

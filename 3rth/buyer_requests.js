@@ -224,7 +224,7 @@ async function getRequests() {
                     <td class="table_company_price" id="company_price_${i}"></td>
                     <td class="table_company_quantity" id="company_quantity_${i}"></td>
                     <td class="table_company_date"></td>
-                    <td class="table_company_userpremium"></td>
+                    <td class="table_company_userpremium" id="company_userpremium_${i}"></td>
                     <td><button class="table-trade-btn btn" id="counter_btn_${i}">Request</button></td>
                     <td><button class="table-trade-btn btn" id="exchange_btn_${i}">Exchange</button></td>
                 </tr>`
@@ -256,12 +256,14 @@ async function getRequests() {
                 const counterBtn = document.getElementById(`counter_btn_${i}`)
                 const companyName = document.getElementById(`company_name_${i}`)
                 const companyPrice = document.getElementById(`company_price_${i}`)
+                const companyUserPremium = document.getElementById(`company_userpremium_${i}`)
                 const companyQuantity = document.getElementById(`company_quantity_${i}`)
                 exchangeBtn.addEventListener("click", () => {
                     const compName = companyName.innerHTML
                     const compPrice = companyPrice.innerHTML
                     const compQuantity = companyQuantity.innerHTML
-                    const userInfoString = compName + "," + compPrice + "," + compQuantity
+                    const compUserPremium = companyUserPremium.innerHTML
+                    const userInfoString = compName + "," + compPrice + "," + compQuantity + "," + compUserPremium
                     const encrypted = CryptoJS.AES.encrypt(userInfoString, "The company called ethioshare is pretty good don't you think so");
 
                     localStorage["sellerCompany"] = encrypted
@@ -272,7 +274,10 @@ async function getRequests() {
                     const compName = companyName.innerHTML
                     const compPrice = companyPrice.innerHTML
                     const compQuantity = companyQuantity.innerHTML
+                    const userInfoString = compName + "," + compPrice + "," + compQuantity
+                    const encrypted = CryptoJS.AES.encrypt(userInfoString, "The company called ethioshare is pretty good don't you think so");
 
+                    localStorage["sellerRequest"] = encrypted
                     window.location.href = "seller_request.html"
                 })
             }
@@ -331,7 +336,7 @@ async function returnCompnaySectors() {
                 <td class="table_company_price" id="company_price_${i}"></td>
                 <td class="table_company_quantity" id="company_quantity_${i}"></td>
                 <td class="table_company_date"></td>
-                <td class="table_company_userpremium"></td>
+                <td class="table_company_userpremium" id="company_userpremium_${i}"></td>
                 <td><button class="table-trade-btn btn" id="counter_btn_${i}">Request</button></td>
                 <td><button class="table-trade-btn btn" id="exchange_btn_${i}">Exchange</button></td>
             </tr>`
@@ -436,7 +441,7 @@ async function returnCompnaySectors() {
                     <td class="table_company_price" id="company_price_${i}"></td>
                     <td class="table_company_quantity" id="company_quantity_${i}"></td>
                     <td class="table_company_date"></td>
-                    <td class="table_company_userpremium"></td>
+                    <td class="table_company_userpremium" id="company_userpremium_${i}"></td>
                     <td><button class="table-trade-btn btn" id="counter_btn_${i}">Request</button></td>
                     <td><button class="table-trade-btn btn" id="exchange_btn_${i}">Exchange</button></td>
                 </tr>`
@@ -539,7 +544,7 @@ async function returnCompnaySectors() {
                     <td class="table_company_price" id="company_price_${i}"></td>
                     <td class="table_company_quantity" id="company_quantity_${i}"></td>
                     <td class="table_company_date"></td>
-                    <td class="table_company_userpremium"></td>
+                    <td class="table_company_userpremium" id="company_userpremium_${i}"></td>
                     <td><button class="table-trade-btn btn" id="counter_btn_${i}">Request</button></td>
                     <td><button class="table-trade-btn btn" id="exchange_btn_${i}">Exchange</button></td>
                 </tr>`
@@ -642,7 +647,7 @@ async function returnCompnaySectors() {
                     <td class="table_company_price" id="company_price_${i}"></td>
                     <td class="table_company_quantity" id="company_quantity_${i}"></td>
                     <td class="table_company_date"></td>
-                    <td class="table_company_userpremium"></td>
+                    <td class="table_company_userpremium" id="company_userpremium_${i}"></td>
                     <td><button class="table-trade-btn btn" id="counter_btn_${i}">Request</button></td>
                     <td><button class="table-trade-btn btn" id="exchange_btn_${i}">Exchange</button></td>
                 </tr>`
@@ -755,7 +760,7 @@ const buysellSearchCompanies = async searchText => {
             <td class="table_company_price" id="company_price_${i}"></td>
             <td class="table_company_quantity" id="company_quantity_${i}"></td>
             <td class="table_company_date"></td>
-            <td class="table_company_userpremium"></td>
+            <td class="table_company_userpremium" id="company_userpremium_${i}"></td>
             <td><button class="table-trade-btn btn" id="counter_btn_${i}">Request</button></td>
             <td><button class="table-trade-btn btn" id="exchange_btn_${i}">Exchange</button></td>
         </tr>`
