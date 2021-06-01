@@ -258,6 +258,7 @@ async function getRequests() {
                 const companyPrice = document.getElementById(`company_price_${i}`)
                 const companyUserPremium = document.getElementById(`company_userpremium_${i}`)
                 const companyQuantity = document.getElementById(`company_quantity_${i}`)
+                const companyId = allBuyerRequests[i]['companyId']
                 exchangeBtn.addEventListener("click", () => {
                     const compName = companyName.innerHTML
                     const compPrice = companyPrice.innerHTML
@@ -267,7 +268,7 @@ async function getRequests() {
                     const encrypted = CryptoJS.AES.encrypt(userInfoString, "The company called ethioshare is pretty good don't you think so");
 
                     localStorage["sellerCompany"] = encrypted
-                    window.location.href = "seller_wanted.html"
+                    window.location.href = `seller_wanted.html?id=${companyId}`
                 })
 
                 counterBtn.addEventListener("click", () => {

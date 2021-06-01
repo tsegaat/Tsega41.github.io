@@ -277,11 +277,13 @@ submitOfferBtn.addEventListener("click", () => {
 
                 aboutRequestInfo['companyPrice'] = matches[0]['price']
                 aboutRequestInfo['companySector'] = matches[0]['sector']
+                const companyId = String(Date.now())
+                aboutRequestInfo['companyId'] = companyId
                 dbf.collection("buyers_requests").doc().set(aboutRequestInfo).then(() => {
                     submitOfferBtn.innerHTML = "Submit Offer"
                     submitOfferBtn.style.backgroundColor = "#e7ebf5"
                     swal("Your offer has been submitted", "An email will be sent to you if your request is accepted", "success").then(() => {
-                        window.location.href = "../2nd/main-page.html"
+                        window.location.href = `../2nd/main-page.html`
                     })
                 })
             })
@@ -294,17 +296,3 @@ submitOfferBtn.addEventListener("click", () => {
 })
 
 // The submit button end
-
-// window.onload = function () {
-//     // this.contact_number.value = Math.random() * 100000 | 0;
-//     // these IDs from the previous steps
-//     emailjs.send("service_hmdp796", "contact_form", {
-//         message: "tsega",
-//         to_email: "tsega@yahoo.com",
-//     })
-//         .then(function () {
-//             console.log('SUCCESS!');
-//         }, function (error) {
-//             console.log('FAILED...', error);
-//         });
-// }

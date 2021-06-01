@@ -187,7 +187,6 @@ profile_settings_li_normal.addEventListener("click", () => {
 
 // setting up the seller wanted page to be dynamic start
 const c = localStorage["sellerCompany"]
-localStorage.removeItem("sellerCompany")
 var decrypted = CryptoJS.AES.decrypt(c, "The company called ethioshare is pretty good don't you think so").toString(CryptoJS.enc.Utf8);
 const seller_selected_company = decrypted.split(",")
 
@@ -213,8 +212,40 @@ total_price_text.innerHTML = Number(compPrice) * Number(compQuantity)
 // Checking if the check box is pressed start 
 const create_acc_content_form_checkbox_button = document.getElementsByClassName("create-acc-content-form-checkbox-button")[0]
 const create_acc_confirm_button = document.getElementsByClassName("create-acc-confirm-button")[0]
+
+var url_string = window.location.href
+var url = new URL(url_string);
+const company_id = url.searchParams.get("id");
+console.log(company_id)
+const transactionInfo = {}
+var buyers_u = []
+dbf.collection("buyers_requests").where("companyId", "==", company_id).get().then((doc) => {
+    const buyers_username = doc.data().username
+    buyers_u.push(doc.data().username)
+    var company_name = doc.data().companyName
+    company_name = company_name[0].toUpperCase()
+    transactionInfo['to_name'] = buyers_username
+    transactionInfo['company_name'] = company_name
+    transactionInfo['company_id'] = company_id
+})
+dbf.collection("users").where("username", "==", buyers_u[0]).get().then((doc) => {
+    const buyers_email = doc.data().email
+    transactionInfo['to_email'] = buyers_email
+})
+
+dbf.collection("users").doc(auth.user.uid).get().then((doc) => {
+    const sellers_username = doc.data().username
+    transactionInfo["from_username"] = sellers_username
+})
+
 create_acc_confirm_button.addEventListener("click", () => {
     if (create_acc_content_form_checkbox_button.checked == true) {
+        emailjs.send("service_hmdp796", "seller_wanted", transactionInfo)
+            .then(function () {
+                console.log('SUCCESS!');
+            }, function (error) {
+                console.log('FAILED...', error);
+            });
         swal("Offer accepted", "The buyer will be notified", "success")
     } else {
         swal("Check the checkbox", "The checkbox must be checked", "error")
