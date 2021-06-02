@@ -206,7 +206,7 @@ seller_wanted_compnay_price.innerHTML = compPrice
 seller_wanted_compnay_premium.innerHTML = compPremium
 seller_wanted_compnay_quantity.innerHTML = compQuantity
 
-total_price_text.innerHTML = Number(compPrice) * Number(compQuantity)
+total_price_text.innerHTML = (Number(compPrice) + Number(compPremium)) * Number(compQuantity)
 // setting up the seller wanted page to be dynamic end
 
 // Checking if the check box is pressed start 
