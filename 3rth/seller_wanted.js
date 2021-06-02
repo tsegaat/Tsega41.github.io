@@ -206,7 +206,7 @@ seller_wanted_compnay_price.innerHTML = compPrice
 seller_wanted_compnay_premium.innerHTML = compPremium
 seller_wanted_compnay_quantity.innerHTML = compQuantity
 
-total_price_text.innerHTML = (Number(compPrice) + Number(compPremium)) * Number(compQuantity)
+total_price_text.innerHTML = ((Number(compPrice) + Number(compPremium)) * Number(compQuantity)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 // setting up the seller wanted page to be dynamic end
 
 // Checking if the check box is pressed start 
@@ -215,10 +215,11 @@ const create_acc_confirm_button = document.getElementsByClassName("create-acc-co
 
 var url_string = window.location.href
 var url = new URL(url_string);
-const company_id = url.searchParams.get("id");
-console.log(company_id)
+const company_id = String(url.searchParams.get("id"))
+
 const transactionInfo = {}
 var buyers_u = []
+// TODO: Not working for no reason 
 dbf.collection("buyers_requests").where("companyId", "==", company_id).get().then((doc) => {
     const buyers_username = doc.data().username
     buyers_u.push(doc.data().username)
