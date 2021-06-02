@@ -295,7 +295,6 @@ nav ul li{
     border-collapse: collapse;
     cursor: pointer;
     border-radius: 10px;
-    width: 767.39px;
 }
 
 .basic-info-types:hover{
@@ -329,7 +328,6 @@ nav ul li{
     border-collapse: collapse;
     cursor: pointer;
     border-radius: 10px;
-    width: 767.39px;
 }
 
 .basic-info-types-contact:hover{
@@ -1012,7 +1010,6 @@ footer{
     .head-title{
         font-size: 38px;
         font-weight: 400;
-        font-family: "Prata";
         text-align: center;
     }
 
@@ -1024,7 +1021,6 @@ footer{
         margin-top: 30px;
         text-align: center;
         font-weight: 400;
-        font-family: "Prata";
         font-size: 18px;
     }
 
